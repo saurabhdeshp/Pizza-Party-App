@@ -9,20 +9,24 @@ import com.example.pizzapartyapp.R.*
 
 const val SLICES_PER_PIZZA = 8
 
+
 /*
 * This class is the activity which will run for the first time
 * In our case this is the page of our pizza party app
 * */
 class MainActivity : AppCompatActivity() {
+
     /**
      * Total people attending the party
      */
     private lateinit var numAttendEditText: EditText
 
+
     /**
      * Total pizzas calculated
      */
     private lateinit var numPizzasTextView: TextView
+
 
     /**
      * The hungry ratio radio button - light, medium and ravenous
@@ -45,6 +49,7 @@ class MainActivity : AppCompatActivity() {
         // Get the text of number of people at the party
         val numAttendStr = numAttendEditText.text.toString()
 
+
         // convert to int
         val numAttend = numAttendStr.toInt()
 
@@ -53,6 +58,7 @@ class MainActivity : AppCompatActivity() {
             id.medium_radio_button -> 3
             else -> 4
         }
+
 
         // calculate number of pizzas needed
         val totalPizzas = kotlin.math.ceil(
