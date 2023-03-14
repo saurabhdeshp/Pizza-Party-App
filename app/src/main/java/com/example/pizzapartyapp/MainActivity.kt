@@ -1,13 +1,16 @@
 package com.example.pizzapartyapp
-import android.widget.RadioGroup
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.RadioGroup
 import android.widget.TextView
-import com.example.pizzapartyapp.R.*
+import androidx.appcompat.app.AppCompatActivity
+import com.example.pizzapartyapp.R.id
+import com.example.pizzapartyapp.R.layout
 
 const val SLICES_PER_PIZZA = 8
+
+
 
 
 /*
@@ -21,12 +24,10 @@ class MainActivity : AppCompatActivity() {
      */
     private lateinit var numAttendEditText: EditText
 
-
     /**
      * Total pizzas calculated
      */
     private lateinit var numPizzasTextView: TextView
-
 
     /**
      * The hungry ratio radio button - light, medium and ravenous
@@ -45,10 +46,10 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+
     fun calculateClick(view: View) {
         // Get the text of number of people at the party
         val numAttendStr = numAttendEditText.text.toString()
-
 
         // convert to int
         val numAttend = numAttendStr.toInt()
@@ -59,12 +60,12 @@ class MainActivity : AppCompatActivity() {
             else -> 4
         }
 
-
         // calculate number of pizzas needed
         val totalPizzas = kotlin.math.ceil(
             numAttend * slicesPerPerson /
                     SLICES_PER_PIZZA.toDouble()
         ).toInt()
+
         numPizzasTextView.text = "Total pizzas: $totalPizzas"
 
     }
